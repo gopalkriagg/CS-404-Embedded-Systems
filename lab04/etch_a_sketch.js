@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 /************************************ETCH-A-SKETCH*********************************
  *  Author:  Gopal Krishan Aggarwal
  *  Roll No: B13121
@@ -7,9 +8,7 @@
  *              The code requires to provide initial position as command-line arguments
  *              and 3rd argument as the colour of the first LED that will turn on.
  *              The project also gives an option to find out current position of the 'cursor'
-**********************************************************************************/
-
-#!/usr/bin/env node
+ **********************************************************************************/
 
 var b = require('bonescript');
 var port = '/dev/i2c-2'; //LEDMatrix is connected to I2C-2
