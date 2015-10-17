@@ -1,3 +1,14 @@
+/************************************ETCH-A-SKETCH*********************************
+ *  Author:  Gopal Krishan Aggarwal
+ *  Roll No: B13121
+ *  Date: 17 October, 2015
+ *  Description: Following code implements etch-a-sketch on a 8X8 I2C LED Matrix
+ *              with eraser, invisiblemode, colour switching, clear matrix functionalities.
+ *              The code requires to provide initial position as command-line arguments
+ *              and 3rd argument as the colour of the first LED that will turn on.
+ *              The project also gives an option to find out current position of the 'cursor'
+**********************************************************************************/
+
 #!/usr/bin/env node
 
 var b = require('bonescript');
@@ -107,7 +118,7 @@ function clearSwitchAction(obj) {
         }
         currentDebounceTime = process.hrtime();
     }
-    /************************Set Current State Switch*******************/
+    /************************Finding out Current position Switch*******************/
 var existingColumnState = [0x00, 0x00];
 var currentStateSwitch = "P8_13";
 var currentdebounceTime = [0, 0];
