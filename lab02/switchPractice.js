@@ -1,15 +1,17 @@
+//Following code takes input from switch connected at inputPin and toggles the
+//state of LEDs mentioned in the array whenever pressed
 var b = require('bonescript');
 
 var leds = ["USR0", "USR1", "USR2", "USR3", "P9_12"];
-var inputPin = "P8_8";
+var inputPin = "P8_12";
 
-for(var i in leds) {
+for (var i in leds) {
     b.pinMode(leds[i], b.OUTPUT);
 }
-b.pinMode(inputPin, b.INPUT);
+b.pinMode(inputPin, b.INPUT, 7, 'pulldown');
 
 var state = b.LOW;
-for(var i in leds) {
+for (var i in leds) {
     b.digitalWrite(leds[i], state);
 }
 
@@ -23,11 +25,11 @@ function interruptCallback(x) {
 
 function toggle() {
     console.log("In toggle");
-    if(state == b.LOW) 
+    if (state == b.LOW)
         state = b.HIGH;
     else state = b.LOW;
-    for(var i in leds){
-     b.digitalWrite(leds[i], state);   
+    for (var i in leds) {
+        b.digitalWrite(leds[i], state);
     }
 }
 

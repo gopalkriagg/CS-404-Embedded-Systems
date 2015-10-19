@@ -1,25 +1,25 @@
+//Following code toggles all the LEDs mentioned in array at an interval of 1000 milliseconds
+
 var b = require('bonescript');
 
 var leds = ["USR0", "USR1", "USR2", "USR3", "P9_14", "P9_12"];
 
-for(var i in leds) {
+for (var i in leds) {
     b.pinMode(leds[i], b.OUTPUT);
 }
 
 var state = b.LOW;
-for(var i in leds) {
+for (var i in leds) {
     b.digitalWrite(leds[i], state);
-    
+
 }
 
 setInterval(toggle, 1000);
 
 function toggle() {
-    if(state == b.LOW) state = b.HIGH;
+    if (state == b.LOW) state = b.HIGH;
     else state = b.LOW;
-    for(var i in leds) {
+    for (var i in leds) {
         b.digitalWrite(leds[i], state);
     }
 }
-
-
