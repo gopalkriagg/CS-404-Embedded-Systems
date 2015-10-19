@@ -1,5 +1,7 @@
 //Following code takes input from switch connected at inputPin and toggles the
-//state of LEDs mentioned in the array whenever pressed
+//states of all the LEDs mentioned in the array whenever pressed
+//Note that it is slightly different from asked problems. In this it toggles
+//the state of LEDs rather than just turning them on
 var b = require('bonescript');
 
 var leds = ["USR0", "USR1", "USR2", "USR3", "P9_12"];
