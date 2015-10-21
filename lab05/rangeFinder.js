@@ -4,7 +4,7 @@
  *Linear regression between Actual distance vs analog Voltage output is used to calculate distanceCm
  *I found a better caliberation is needed to be done! (=> better m and c => better eperimental readings)
  *Does not produce very accurate result for very small distances (<20cm) 
- * ****************************************************************************/
+ ******************************************************************************/
 var b = require('bonescript');
 var rangeFinderPin = "P9_40";
 var analogVoltage = 0;
