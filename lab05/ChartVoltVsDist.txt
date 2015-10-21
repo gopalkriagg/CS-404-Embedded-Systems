@@ -9,3 +9,4 @@ Analog Voltage(0 to 5V)	Actual Distance in cm
 0.318			45
 0.333			55
 
+(Accidentally took 5V in calculations. Should have been 3.3V!)
