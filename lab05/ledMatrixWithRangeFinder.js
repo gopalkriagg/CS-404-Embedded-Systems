@@ -31,7 +31,7 @@ setInterval(read, time);
 function read() {
     reading = b.analogRead(rangeFinderPin);
     analogVoltage = reading * 5.0; // ADC Value converted to voltage (Accidentally took it as 5. Should have been 3.3!)
-    console.log('x.value = ' + analogVoltage);
+    console.log('Analog Voltage = %d volt', analogVoltage.toFixed(3));
     distanceCm = analogVoltage * m + c; //m and c calculated through regression on data in same folder
     console.log("There is an object " + distanceCm.toFixed(3) + " cm away.");
     updateLedMatrix(distanceCm);
