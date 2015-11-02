@@ -1,0 +1,11 @@
+1. Go to https://www.debian.org/releases/  and look up what the current stable, testing and unstable realeases are codenamed?
+Current Stable Version: Jessie i.e. Debian 8
+Current testing version: Stretch
+Current unstable version (named as always): Sid
+
+
+Use apt-get pkgnames to see how many packages are available to install.
+Install htop and find what version was installed.
+Follow the directions from class to add the Jessie release packages.  List what you do.
+Use apt-get pkgnames again to see how many packages are now available to install.
+Install the Jessie release of  htop and find what version was installed.
