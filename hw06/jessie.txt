@@ -3,9 +3,23 @@ Current Stable Version: Jessie i.e. Debian 8
 Current testing version: Stretch
 Current unstable version (named as always): Sid
 
+2. Use apt-cache pkgnames to see how many packages are available to install.
+Performing apt-cache pkgnames | wc in terminal on bone gives 36685 lines and since each line correspons to a single package name it implies 36685 packages are available to install right now.
 
-Use apt-get pkgnames to see how many packages are available to install.
-Install htop and find what version was installed.
-Follow the directions from class to add the Jessie release packages.  List what you do.
-Use apt-get pkgnames again to see how many packages are now available to install.
-Install the Jessie release of  htop and find what version was installed.
+APT-GET WAS UNABLE TO CONNECT TO INTERNET. SO, COULDNT COMPLETE FOLLOWING QUESTIONS.
+
+3. Install htop and find what version was installed.
+htop version 1.0.1 was installed. (did on my laptop)
+
+
+4.Follow the directions from class to add the Jessie release packages.  List what you do.
+echo "deb http://ftp.us.debian.org/debian/ jessie main contrib non-free" > /etc/apt/sources.list.d/jessie.list
+echo "deb http://ftp.us.debian.org/debian/ wheezy-backports main" > /etc/apt/sources.list.d/wheezy-backports.list
+apt-get update
+
+
+5.Use apt-get pkgnames again to see how many packages are now available to install.
+
+6.Install the Jessie release of htop and find what version was installed.
+
+
