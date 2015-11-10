@@ -1,3 +1,14 @@
+# Comments from Mark A. Yoder
+#
+# 4 dts file - I get 0x164 for the offset, not 0x40
+# 5 comment block
+# 5 Debian release names
+# 3 Debian package count before and after adding jessie - After not done
+# 3 htop versions before and after jessie - What was the htop jessie version?
+
+# Grade:  20/25
+#######################################################
+
 1. Go to https://www.debian.org/releases/  and look up what the current stable, testing and unstable realeases are codenamed?
 Current Stable Version: Jessie i.e. Debian 8
 Current testing version: Stretch
