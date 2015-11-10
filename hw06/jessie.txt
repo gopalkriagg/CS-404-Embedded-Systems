@@ -4,12 +4,12 @@ Current testing version: Stretch
 Current unstable version (named as always): Sid
 
 2. Use apt-cache pkgnames to see how many packages are available to install.
-Performing apt-cache pkgnames | wc in terminal on bone gives 36685 lines and since each line correspons to a single package name it implies 36685 packages are available to install right now.
+Performing apt-cache pkgnames | wc in terminal on bone gives 36685 lines and since each line corresponds to a single package name it implies 36685 packages are available to install right now.
 
-APT-GET WAS UNABLE TO CONNECT TO INTERNET. SO, COULDNT COMPLETE FOLLOWING QUESTIONS.
+EARLIER I WASN'T ABLE TO CONNECT WITH INTERNET BUT SANJEEV FIGURED OUT WE HAD TO SET PROXY THROUGH export http_proxy=http://10.8.0.1:8080 and export https_proxy=https://10.8.0.1:8080 TO MAKE IT WORK. SURPRISINGLY PING WORKS WITHOUT PROXY.
 
 3. Install htop and find what version was installed.
-htop version 1.0.1 was installed. (did on my laptop)
+htop version 1.0.1 was installed.
 
 
 4.Follow the directions from class to add the Jessie release packages.  List what you do.
@@ -19,7 +19,8 @@ apt-get update
 
 
 5.Use apt-get pkgnames again to see how many packages are now available to install.
+48748 packages; an increase of about 12k!
 
 6.Install the Jessie release of htop and find what version was installed.
-
+1.0.3-1
 

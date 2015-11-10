@@ -1,0 +1,67 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install', 'plotly' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.40
+4 verbose node symlink /usr/bin/node
+5 verbose cache add [ 'plotly', null ]
+6 verbose cache add name=undefined spec="plotly" args=["plotly",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: 'plotly',
+7 verbose parsed url   path: 'plotly',
+7 verbose parsed url   href: 'plotly' }
+8 silly lockFile a0bd7627-plotly plotly
+9 verbose lock plotly /home/gopal/.npm/a0bd7627-plotly.lock
+10 silly lockFile a0bd7627-plotly plotly
+11 silly lockFile a0bd7627-plotly plotly
+12 verbose addNamed [ 'plotly', '' ]
+13 verbose addNamed [ null, '*' ]
+14 silly lockFile b5801e6e-plotly plotly@
+15 verbose lock plotly@ /home/gopal/.npm/b5801e6e-plotly.lock
+16 silly addNameRange { name: 'plotly', range: '*', hasData: false }
+17 verbose request where is /plotly
+18 verbose request registry http://registry.npmjs.org/
+19 verbose request id 119d2bc189fd0a2b
+20 verbose url raw /plotly
+21 verbose url resolving [ 'http://registry.npmjs.org/', './plotly' ]
+22 verbose url resolved http://registry.npmjs.org/plotly
+23 verbose request where is http://registry.npmjs.org/plotly
+24 info trying registry request attempt 1 at 12:29:42
+25 http GET http://registry.npmjs.org/plotly
+26 info retry will retry, error on last attempt: Error: 139726083942208:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:../deps/openssl/openssl/ssl/s23_clnt.c:782:
+27 info trying registry request attempt 2 at 12:29:52
+28 http GET http://registry.npmjs.org/plotly
+29 info retry will retry, error on last attempt: Error: 139726083942208:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:../deps/openssl/openssl/ssl/s23_clnt.c:782:
+30 info trying registry request attempt 3 at 12:30:52
+31 http GET http://registry.npmjs.org/plotly
+32 silly lockFile b5801e6e-plotly plotly@
+33 silly lockFile b5801e6e-plotly plotly@
+34 error Error: 139726083942208:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:../deps/openssl/openssl/ssl/s23_clnt.c:782:
+34 error
+34 error     at SlabBuffer.use (tls.js:235:18)
+34 error     at CleartextStream.read [as _read] (tls.js:455:29)
+34 error     at CleartextStream.Readable.read (_stream_readable.js:341:10)
+34 error     at EncryptedStream.write [as _write] (tls.js:369:25)
+34 error     at doWrite (_stream_writable.js:226:10)
+34 error     at writeOrBuffer (_stream_writable.js:216:5)
+34 error     at EncryptedStream.Writable.write (_stream_writable.js:183:11)
+34 error     at write (_stream_readable.js:602:24)
+34 error     at flow (_stream_readable.js:611:7)
+34 error     at Socket.pipeOnReadable (_stream_readable.js:643:5)
+34 error     at Socket.emit (events.js:92:17)
+35 error If you need help, you may report this *entire* log,
+35 error including the npm and node versions, at:
+35 error     <http://github.com/npm/npm/issues>
+36 error System Linux 3.13.0-67-generic
+37 error command "/usr/bin/node" "/usr/bin/npm" "install" "plotly"
+38 error cwd /home/gopal/Dropbox/Sem 5/CS 404 Embedded Programming/CS-404-Embedded-Systems/project/plotly_project
+39 error node -v v0.10.40
+40 error npm -v 1.4.28
+41 verbose exit [ 1, true ]
