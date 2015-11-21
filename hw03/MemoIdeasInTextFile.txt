@@ -1,0 +1,24 @@
+To: Mark A. Yoder, Professor, IIT Mandi
+From: Gopal Krishan Aggarwal, 3rd year CSE, B.Tech, IIT Mandi
+Date: October 05, 2015
+Subject: Ideas for Embedded Systems’ project
+Team: Gopal Krishan Aggarwal and Sanjeev Khare
+The following are few potential projects that can be undertaken:
+• Face detecting and following robot:
+The robot will detect a human face through the help of a mini-camera connected with bea-
+gleboard and then beagleboard will drive the actuators(here wheels of the robot) to follow
+the person. The bot can be made to follow specific person/people if camera quality and face
+detection is good. (Similar project can be seen at youtube)
+• Monitoring natural processes around the campus:
+This can include monitoring daily sunlight(useful for determining viability and usefulness
+of solar panels in the area), monitoring wind speed (useful for monitoring viability and
+usefulness of wind turbines in the area), monitoring daily sunrise and sunset in the cam-
+pus(since this is affected by nearby mountains) and monitoring weather(temperature, rain-
+fall etc.). The data will be collected by beaglboard through various sensors.
+• Monitoring daily food wastage:
+Daily a huge amount of food is wasted in mess. This can probably be reduced when peo-
+ple can look at how much food is being wasted. A pressure/weight sensor can be placed
+beneath the bucket in which waste food is dumped and then beagleboard can read the data
+from sensor and can update it on a website(building various statistics and graphs over time)
+and also displaying it on a small LCD screen real-time at the spot.
+
