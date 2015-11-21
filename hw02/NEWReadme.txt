@@ -1,0 +1,5 @@
+To: Prof. Mark A. Yoder
+From: Gopal Krishan Aggarwal
+Date: 21 November, 2015
+HW about: Controlling 4 LEDs with 4 Buttons and interfacing etch a sketch with buttons. 
+Thoughts: I had completed 4ButtonsAndLEDs (which I just updated) but had not misplaced the code somehwhere and did not upload it on git. I had also made etch-a-sketch in C++ in my previous hw (hw01) but did not put it in this folder. I have still not combined the etch-a-sketch.cpp with buttons since there is no easy way of doing that in C++ (Should have known earlier!). But, in later labs I was successful to combine etch-a-sketch on LED Matrix with Buttons as well as Joystick with additional features of eraser mode, colour change mode, clear mode, invisible mode, and also a button to find out current cursor position. Right now I have got 'F' grade for this hw which I think I don't reflect my correct knowledge at that time. Please update if possible and I am really sorry to bother you about this at this point of time!
