@@ -1,3 +1,5 @@
+//Modified a bit by Gopal Krishan Aggarwal and Sanjeev Khare.
+
 // Inspired by http://playground.arduino.cc/Main/MPU-6050#short
 // BoneScript API: https://github.com/jadonk/bonescript
 // Based on code from the BeagleBone Cookbook: http://shop.oreilly.com/product/0636920033899.do
