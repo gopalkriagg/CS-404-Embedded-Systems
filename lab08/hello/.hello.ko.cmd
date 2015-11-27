@@ -1,0 +1,1 @@
+cmd_/root/Cs404EmbeddedSytems/lab08/hello/hello.ko := ld -EL -r  -T /usr/src/linux-headers-3.8.13-bone70/scripts/module-common.lds --build-id  -o /root/Cs404EmbeddedSytems/lab08/hello/hello.ko /root/Cs404EmbeddedSytems/lab08/hello/hello.o /root/Cs404EmbeddedSytems/lab08/hello/hello.mod.o
