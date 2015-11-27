@@ -1,6 +1,9 @@
-// Mostly inspired (copied) from stackoverflow question and from tushar jain.
-// http://stackoverflow.com/questions/13124271/driving-beaglebone-gpio-through-dev-mem
-// Reads from one gpio and writes to another
+//Modified by Gopal Krishan Aggarwal on 22 Novemeber, 2015
+// From : http://stackoverflow.com/questions/13124271/driving-beaglebone-gpio-through-dev-mem
+//
+// Read one gpio pin and write it out to another using mmap.
+// Be sure to set -O3 when compiling.
+// Modified by Mark A. Yoder  26-Sept-2013
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/mman.h>
@@ -9,22 +12,30 @@
 #include <signal.h>    // Defines signal-handling functions (i.e. trap Ctrl-C)
 #include "beaglebone_gpio.h"
 
-// making global var and funcs
-int goOn  = 1;
+//Folllowing few lines added by me
+#define P9_12 (1<<28)
+#define LED P9_12
 
+#define P8_16 (1<<14)
+#define SWITCH P8_16
+
+/****************************************************************
+ * Global variables
+ ****************************************************************/
+int keepgoing = 1;    // Set to 0 when ctrl-c is pressed
+
+/****************************************************************
+ * signal_handler
+ ****************************************************************/
 void signal_handler(int sig);
-
+// Callback called when SIGINT is sent to the process (Ctrl-C)
 void signal_handler(int sig)
 {
-	printf("Ctrl-C pressed , exiting\n");
-	goOn = 0;
+    printf( "\nCtrl-C pressed, cleaning up and exiting...\n" );
+	keepgoing = 0;
 }
 
-int main(int argc, char const *argv[])
-{
-
-	//Declaring variables
-
+int main(int argc, char *argv[]) {
     volatile void *gpio_addr;
     volatile unsigned int *gpio_oe_addr;
     volatile unsigned int *gpio_datain;
@@ -32,54 +43,43 @@ int main(int argc, char const *argv[])
     volatile unsigned int *gpio_cleardataout_addr;
     unsigned int reg;
 
-    //for Ctrl-C
-
-     signal(SIGINT, signal_handler);
-
-     //open  dev/mem 
+    // Set the signal callback for Ctrl-C
+    signal(SIGINT, signal_handler);
 
     int fd = open("/dev/mem", O_RDWR);
 
-    printf("Mapping %X - %X (size: %X)\n", GPIO0_START_ADDR, GPIO0_END_ADDR, GPIO0_SIZE);
-    gpio_addr = mmap(0, GPIO0_SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, GPIO0_START_ADDR);
+    printf("Mapping %X - %X (size: %X)\n", GPIO0_START_ADDR, GPIO0_END_ADDR, 
+                                           GPIO0_SIZE);
 
-    //Setting offset for pins from the .h file
+    gpio_addr = mmap(0, GPIO1_SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 
+                        GPIO1_START_ADDR);
 
     gpio_oe_addr           = gpio_addr + GPIO_OE;
     gpio_datain            = gpio_addr + GPIO_DATAIN;
     gpio_setdataout_addr   = gpio_addr + GPIO_SETDATAOUT;
     gpio_cleardataout_addr = gpio_addr + GPIO_CLEARDATAOUT;
-   
-    //Check if mmap worked at that address.
 
     if(gpio_addr == MAP_FAILED) {
-    printf("Unable to map GPIO\n");
-    exit(1);
-	}
-
+        printf("Unable to map GPIO\n");
+        exit(1);
+    }
     printf("GPIO mapped to %p\n", gpio_addr);
     printf("GPIO OE mapped to %p\n", gpio_oe_addr);
     printf("GPIO SETDATAOUTADDR mapped to %p\n", gpio_setdataout_addr);
     printf("GPIO CLEARDATAOUT mapped to %p\n", gpio_cleardataout_addr);
 
-    *gpio_oe_addr0 &= GPIO_03;
-	*gpio_oe_addr0 &= ~GPIO_07;    
-
-    printf("Button at GPIO_03 controls LED at GPIO_07\n");
-
-    while(goOn) {
-    	if(*gpio_datain & GPIO_03) {
-            *gpio_setdataout_addr= GPIO_07;
+    printf("Start copying GPIO_07 to GPIO_03\n");
+    while(keepgoing) {
+    	if(*gpio_datain & SWITCH) {
+    	  //  printf("Hallelujah!\n");
+            *gpio_setdataout_addr= LED;
     	} else {
-            *gpio_cleardataout_addr = GPIO_07;
+            *gpio_cleardataout_addr = LED;
     	}
+        //usleep(1);
     }
-
-	//Un map or else bone does strange things later! You must reboot it without it.
 
     munmap((void *)gpio_addr, GPIO0_SIZE);
     close(fd);
     return 0;
 }
-
-
